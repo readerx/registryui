@@ -1,0 +1,26 @@
+{{extends "base.html"}}
+
+{{block body()}}
+
+<table id="datatable" class="table table-striped table-bordered">
+    <thead bgcolor="#ddd">
+        <tr>
+            <th>Tag name</th>
+            <th>Full address </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{range tag := tags}}
+        <tr>
+            <td>
+                <a href="{{ basePath }}/{{ repo }}/{{ tag }}">{{ tag }}</a>
+            </td>
+            <td>
+                {{registryHost}}/{{repo}}:{{tag}}
+            </td>
+        </tr>
+        {{end}}
+    </tbody>
+</table>
+
+{{end}}
